@@ -1,8 +1,8 @@
 import './Btn.css'
 
-export function Button({text}) {
+export function Button({text,fun}) {
     return (
-        <button>
+        <button onClick={fun}>
             {text}
         </button>
     )
