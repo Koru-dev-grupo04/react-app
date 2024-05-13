@@ -15,7 +15,8 @@ export function App () {
         cidade.innerHTML = data.localidade;
         let uf = document.getElementById("uf");
         uf.innerHTML = data.uf;
-        let clima = await fetch('https://goweather.herokuapp.com/weather/${cidade}');
+        let cidadeClima = data.localidade.replace(" ", "").normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        let clima = await fetch(`https://goweather.herokuapp.com/weather/${cidadeClima}`);
         let data2 = await clima.json();
         let temperatura = document.getElementById("temperatura");
         temperatura.innerHTML = data2.temperature;
