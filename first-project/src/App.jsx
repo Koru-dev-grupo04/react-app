@@ -15,15 +15,16 @@ export function App () {
         cidade.innerHTML = data.localidade;
         let uf = document.getElementById("uf");
         uf.innerHTML = data.uf;
-        let cidadeClima = data.localidade.replace(" ", "").normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+        let cidadeClima = data.localidade.replaceAll(" ", "").normalize('NFD').replace(/[\u0300-\u036f]/g, "");
         let clima = await fetch(`https://goweather.herokuapp.com/weather/${cidadeClima}`);
         let data2 = await clima.json();
         let temperatura = document.getElementById("temperatura");
         temperatura.innerHTML = data2.temperature;
         let vento = document.getElementById("ventos");
         vento.innerHTML = data2.wind;
-
-        console.log(data2)
+        console.log(cidadeClima);
+        console.log(data2);
     };
 
     const limparTexto = () => {
