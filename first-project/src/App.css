@@ -1,16 +1,33 @@
 :root {
     font-family: 'Roboto';
-    background-color: rgb(143, 179, 235);
+    background-image: url("../public/fundo.jpg");
 }
 
-main {
-    background-color: rgb(235, 252, 176);
+main{
+    background-color: aliceblue;
     padding: 5rem;
     text-align: center;
+    margin: 2vw 25vw;
 }
 
 input {
-    padding: .25rem;
-    margin: .25rem 0;
+    padding: 1rem;
+    margin: .5rem .5rem;
     font-size: 1.25rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 4px 4px rgb(168, 167, 167);
+}
+
+#logo {
+    max-width: 15vw;
+}
+
+#informacoes {
+    text-align: start;
+    font-size: large;
+    background-color: #82b1e7;
+    padding: 2.5vw;
+    margin: 2.5vw 0.25vw;
+    line-height: 2rem;
 }
